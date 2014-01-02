@@ -72,7 +72,7 @@ public class MainFrame extends JFrame implements SwarmDisplay {
 
     @Override
     public int particleNum() {
-        return Swarm.DEFAULT_NUMBER_OF_PARTICLES;
+        return Swarm.DEFAULT_NUMBER_OF_PARTICLES * 100;
     }
 
     @Override
@@ -141,7 +141,8 @@ public class MainFrame extends JFrame implements SwarmDisplay {
         }
 
         @Override
-        public void paint(Graphics g) {
+        public void paintComponent(Graphics g) {
+            super.paintComponent(g);
             Graphics2D g2 = (Graphics2D) g;
             if (shopPath == null) {
                 g2.clearRect(0, 0, getWidth(), getHeight());
@@ -170,19 +171,12 @@ public class MainFrame extends JFrame implements SwarmDisplay {
         }
 
         private Font getFontByHeight(Graphics2D g2, int h) {
-            int min = 0, max = h, size = h / 2;
-            while (true) {
-                Font font = new Font(fontChoice, Font.PLAIN, size);
-                if (max == min) {
-                    return font;
-                }
-                int height = g2.getFontMetrics(font).getHeight();
-                if (height > size) {
-                    min = size;
-                } else {
-                    max = size;
-                }
-            }
+            Font font;
+            int height = h;
+            do {
+                font = new Font(fontChoice, Font.PLAIN, height--);
+            } while (g2.getFontMetrics(font).getHeight() > h);
+            return font;
         }
     }
 
