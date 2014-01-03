@@ -9,9 +9,9 @@ public class MyRectangle {
     public MyRectangle(double x, double y, double w, double h, double r) {
         this.x = x;
         this.y = y;
+        this.r = r;
         this.w = w;
         this.h = h;
-        this.r = r;
     }
 
     public void paint(Graphics2D g) {
@@ -32,5 +32,10 @@ public class MyRectangle {
                 && Double.compare(rectangle.w, w) == 0
                 && Double.compare(rectangle.x, x) == 0
                 && Double.compare(rectangle.y, y) == 0;
+    }
+
+    @Override
+    public String toString() {
+        return x + " " + y + " " + w + " " + h + " " + r;
     }
 }

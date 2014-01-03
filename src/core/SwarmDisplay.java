@@ -1,6 +1,4 @@
-package gui;
-
-import core.MyRectangle;
+package core;
 
 import java.awt.geom.Path2D;
 
@@ -20,6 +18,14 @@ public interface SwarmDisplay {
     double[] maxVelocity();
 
     double[] minVelocity();
+
+    int neighborNum();
+
+    double inertia();
+
+    double particleIncrement();
+
+    double globalIncrement();
 }
 
 
