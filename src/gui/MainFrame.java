@@ -25,7 +25,7 @@ public class MainFrame extends JFrame implements SwarmDisplay {
         currentMode = Mode.NONE;
         isStart = false;
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setBounds(0, 0, 800, 600);
+        setBounds(0, 0, 600, 400);
         setResizable(false);
         setLayout(new BorderLayout());
         init();
@@ -44,9 +44,9 @@ public class MainFrame extends JFrame implements SwarmDisplay {
 
     private void init() {
         shopEditor = new ShopEditor();
-        shopEditor.setPreferredSize(new Dimension(600, 600));
+        shopEditor.setPreferredSize(new Dimension(400, 400));
         functionPanel = new FunctionPanel();
-        functionPanel.setPreferredSize(new Dimension(200, 600));
+        functionPanel.setPreferredSize(new Dimension(200, 400));
         getContentPane().add(shopEditor, BorderLayout.CENTER);
         getContentPane().add(functionPanel, BorderLayout.EAST);
     }
@@ -162,7 +162,7 @@ public class MainFrame extends JFrame implements SwarmDisplay {
                 shopPath = new Path2D.Double();
             }
             g2.setPaint(Color.BLACK);
-
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             Font old = g2.getFont();
             if (rectangle != null) {
                 rectangle.paint(g2);
