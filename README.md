@@ -12,6 +12,7 @@ This project is a little demo for the following use case
 
 UI Usage
 --------
+(See archive in ./artifacts/LargestRectangle_PSO.jar)
 The left panel is Canvas Pannel used to draw *Shop Polygon*.
 The right panel is the Function Panel holding some functional buttons and parameter inputtings.
 
@@ -29,6 +30,22 @@ The right panel is the Function Panel holding some functional buttons and parame
 Demo
 ----
 ![image](https://github.com/dawnwords/LargestRectangle/raw/master/artifacts/Demo.png)
+
+Experiment
+----------
+(See archive in ./artifacts/LargestRectangle_Experiment.jar)
+5 Experiments on different algorithm settings on Concole
+
++ Experiment on Neighborhood
++ Experiment on Praticle Number
++ Experiment on Iteration Number
++ Experiment on Parameter
++ Experiment on Min Velocity
+
+*To Run The Experiment*
++ Input Experiment code(0-4)
++ Input 4 basic argument(neighborNum particleNum iterationTimes experimentTimes)
++ Press Enter to start
 
 References
 ---------
