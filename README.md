@@ -1,6 +1,6 @@
 LargestRectangle
 ================
-Finding Largest Rectangle In Random Polygon Using JSwarm
+Finding Largest Text Container In Random Polygon Using JSwarm
 
 Description
 -----------
