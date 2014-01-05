@@ -6,12 +6,12 @@ import java.io.InputStreamReader;
 public class Main {
 
     public static final Class[] EXPERIMENT_CLASSES = new Class[]{NeighborhoodExperiment.class,
-            IterationParticleNumExperiment.class};
+            ParticleNumExperiment.class, MinVelocityExperiment.class, IterationTimesExperiment.class, ParameterExperiment.class};
 
     public static void main(String[] args) throws Exception {
         System.out.println("Choose Experiment:format(%d)");
         for (int i = 0; i < EXPERIMENT_CLASSES.length; i++) {
-            System.out.printf("%d:%s\t", i, EXPERIMENT_CLASSES[i].getSimpleName());
+            System.out.printf("%d:%s\n", i, EXPERIMENT_CLASSES[i].getSimpleName());
         }
         System.out.println();
 

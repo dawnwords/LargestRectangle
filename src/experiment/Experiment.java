@@ -8,21 +8,24 @@ import net.sourceforge.jswarm_pso.Swarm;
 import java.awt.geom.Path2D;
 
 public abstract class Experiment implements SwarmDisplay {
-    private int neighborNum, particleNum, iterationTimes, experimentTimes;
+    protected int group;
+    private int neighborNum, particleNum, iterationTimes, experimentTimes, groupCount;
     private int currentTimes;
-    private String line;
+    private String n;
 
-    protected Experiment(int neighborNum, int particleNum, int iterationTimes, int experimentTimes) {
+    protected Experiment(int neighborNum, int particleNum, int iterationTimes, int experimentTimes, int groupCount) {
         this.neighborNum = neighborNum;
         this.particleNum = particleNum;
         this.iterationTimes = iterationTimes;
         this.experimentTimes = experimentTimes;
+        this.groupCount = groupCount;
         this.currentTimes = 0;
+        this.group = 0;
     }
 
     public void start() {
         System.out.println("Times\t" + getHeader());
-        line = "1";
+        n = "1";
         startAlgorithm();
     }
 
@@ -36,7 +39,14 @@ public abstract class Experiment implements SwarmDisplay {
 
     @Override
     public void endEvolve(MyRectangle best) {
-        showResult(best);
+        write(best.h * best.w);
+        group++;
+
+        if (group % groupCount == 0) {
+            group = 0;
+            newLine();
+        }
+
         if (currentTimes != experimentTimes) {
             startAlgorithm();
         }
@@ -49,6 +59,7 @@ public abstract class Experiment implements SwarmDisplay {
         path.lineTo(400, 100);
         path.lineTo(400, 200);
         path.lineTo(100, 200);
+        path.closePath();
         return path;
     }
 
@@ -99,20 +110,23 @@ public abstract class Experiment implements SwarmDisplay {
 
     protected abstract String getHeader();
 
-    protected abstract void showResult(MyRectangle best);
-
     protected void write(int i) {
-        line += "\t" + i;
+        write("" + i);
     }
 
     protected void write(double d) {
-        line += "\t" + d;
+        write("" + d);
+    }
+
+    private void write(String s) {
+        System.out.print(n + "\t" + s);
+        n = "";
     }
 
     protected void newLine() {
-        System.out.println(line);
+        System.out.println();
         currentTimes++;
-        line = "" + (currentTimes + 1);
+        n = "" + (currentTimes + 1);
     }
 
 }
