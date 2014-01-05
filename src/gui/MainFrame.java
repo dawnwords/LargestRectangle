@@ -57,7 +57,8 @@ public class MainFrame extends JFrame implements SwarmDisplay {
     }
 
     @Override
-    public void endEvolve() {
+    public void endEvolve(MyRectangle best) {
+        System.out.println(best.w * best.h);
         functionPanel.stopAlgorithm();
         shopEditor.repaint();
     }

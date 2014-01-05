@@ -24,8 +24,7 @@ public class SwarmThread extends Thread {
             }
             i++;
         }
-        System.out.println(swarm.getBestFitness() + " " + getBestRectangle(swarm));
-        display.endEvolve();
+        display.endEvolve(getBestRectangle(swarm));
     }
 
     private Swarm initSwarm() {

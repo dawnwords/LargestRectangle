@@ -5,7 +5,7 @@ import java.awt.geom.Path2D;
 public interface SwarmDisplay {
     void showEvolveResult(MyRectangle rectangle);
 
-    void endEvolve();
+    void endEvolve(MyRectangle best);
 
     Path2D.Double getPath();
 
