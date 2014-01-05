@@ -13,6 +13,7 @@ This project is a little demo for the following use case
 UI Usage
 --------
 (See archive in ./artifacts/LargestRectangle_PSO.jar)
+
 The left panel is Canvas Pannel used to draw *Shop Polygon*.
 The right panel is the Function Panel holding some functional buttons and parameter inputtings.
 
@@ -34,6 +35,7 @@ Demo
 Experiment
 ----------
 (See archive in ./artifacts/LargestRectangle_Experiment.jar)
+
 5 Experiments on different algorithm settings on Concole
 
 + Experiment on Neighborhood
