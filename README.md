@@ -1,8 +1,6 @@
 LargestRectangle
 ================
-
-Finding Largest Rectangle In Random Polygon Using JSwarm
---------------------------------------------------------
+Finding Largest Text Container In Random Polygon Using JSwarm
 
 Description
 -----------
@@ -30,9 +28,9 @@ The right panel is the Function Panel holding some functional buttons and parame
 
 Demo
 ----
-![image](https://github.com/dawnwords/LargestRectangle/tree/master/artifacts/Demo.png)
+![image](https://github.com/dawnwords/LargestRectangle/raw/master/artifacts/Demo.png)
 
 References
 ---------
-+[Particle Swarm Optimization(PSO)](http://en.wikipedia.org/wiki/Particle_swarm_optimization)
-+[JSwarm](http://jswarm-pso.sourceforge.net/)
++ [Particle Swarm Optimization(PSO)](http://en.wikipedia.org/wiki/Particle_swarm_optimization)
++ [JSwarm](http://jswarm-pso.sourceforge.net/)
